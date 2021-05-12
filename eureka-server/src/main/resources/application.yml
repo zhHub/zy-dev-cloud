@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    # 以IP注册到注册中心
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+    # 服务的一些元数据信息
+    metadata-map:
+      VERSION: 0.0.1-SNAPSHOT
+  client:
+    # 注册中心将自己作为客户端来尝试注册自己，注册中心集群环境下需开启此配置
+    register-with-eureka: false
+    # 是否从 eureka-server获取注册信息，单节点不需要同步，
+    fetch-registry: false
+    # 置与 eureka-server交互的地址，查询服务和注册服务都需要依赖这个地址
+    service-url:
+      defaultZone: http://zy.eureka.server.com:8761/eureka/
+    disable-delta: true
+    registry-fetch-interval-seconds: 10
+  server:
+    # 在此eureka服务器中关闭自我保护模式(false)，所谓自我保护模式是指，出现网络分区、eureka在短时间内丢失过
+    enableSelfPreservation: true
