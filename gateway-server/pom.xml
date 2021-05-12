@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.zy.dev.cloud</groupId>
-	<artifactId>eureka-server</artifactId>
+	<artifactId>gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eureka-server</name>
+	<name>gateway-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<developers>
@@ -27,16 +27,29 @@
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
 	</properties>
 	<dependencies>
-		<!--netflix-eureka-client-->
+		<!--gateway 网关-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 
-		<!-- actuator starter 健康检查 -->
+		<!--eureka 客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!--健康检查-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!--热启动操作-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
