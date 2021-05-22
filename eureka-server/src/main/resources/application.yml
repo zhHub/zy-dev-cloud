@@ -23,3 +23,11 @@ eureka:
   server:
     # 在此eureka服务器中关闭自我保护模式(false)，所谓自我保护模式是指，出现网络分区、eureka在短时间内丢失过
     enableSelfPreservation: true
+spring:
+  cloud:
+    inetutils:
+      preferred-networks: 1192.168.1.104
+      ignored-interfaces:
+        - lo
+        - vEthernet (Default Switch)
+        - vEthernet (nat)

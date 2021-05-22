@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>org.zy.dev.cloud</groupId>
-	<artifactId>eureka-server</artifactId>
+	<artifactId>consum-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eureka-server</name>
+	<name>consumer-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<!-- 开发者信息 -->
@@ -33,16 +33,30 @@
 
 	<!-- 包 -->
 	<dependencies>
-		<!--netflix-eureka-client-->
+		<!-- web -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- actuator starter 健康检查 -->
+		<!--eureka 客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!--健康检查-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!--热启动操作-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

@@ -3,8 +3,29 @@ server:
 management:
   server:
     port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 spring:
   application:
     name: gateway-server
+  cloud:
+    gateway:
+      discovery:
+      routes:
+        - id: consumer-server
+          uri: lb://CONSUMER-SERVER
+          predicates:
+            # 匹配路径转发
+            - Path=/consumer-server/**
+          filters:
+            - StripPrefix=1
+    inetutils:
+      preferred-networks: 192.168.1.104
+      ignored-interfaces:
+        - lo
+        - vEthernet (Default Switch)
+        - vEthernet (nat)
 
