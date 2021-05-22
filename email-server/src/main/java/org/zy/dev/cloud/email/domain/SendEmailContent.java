@@ -57,9 +57,14 @@ public class SendEmailContent {
     private String text;
     
     /**
-     * 是否使用 HTML 模板
+     * 是否使用模板，默认否
      */
     private Boolean templateFlag = Boolean.FALSE;
+    
+    /**
+     * 是否使用默认内容类型（“text/plain”）为HTML邮件应用内容类型 “text/html”,默认是
+     */
+    private Boolean htmlFlag = Boolean.TRUE;
     
     /**
      * HTML 模板标识 code
