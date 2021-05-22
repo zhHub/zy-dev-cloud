@@ -29,8 +29,6 @@ public class EmailHelper {
      */
     private static final Logger LOG = LoggerFactory.getLogger(EmailHelper.class);
     
-    private static final String FAIL_MESSAGE = "邮件发送失败";
-    private static final String SUCCESS_MESSAGE = "邮件发送成功";
     
     private final JavaMailSender mailSender;
     
@@ -78,9 +76,9 @@ public class EmailHelper {
     public boolean sendEmail(SendEmailUser sendEmailUser, SimpleMailMessage simpleMailMessage) {
         try {
             configurationJavaMailSenderImpl(sendEmailUser).send(simpleMailMessage);
-            LOG.info(SUCCESS_MESSAGE);
+            LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(FAIL_MESSAGE + e.getMessage());
+            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
             return false;
         }
         return true;
@@ -96,9 +94,9 @@ public class EmailHelper {
     public boolean sendEmail(SendEmailUser sendEmailUser, SimpleMailMessage... simpleMailMessages) {
         try {
             configurationJavaMailSenderImpl(sendEmailUser).send(simpleMailMessages);
-            LOG.info(SUCCESS_MESSAGE);
+            LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(FAIL_MESSAGE + e.getMessage());
+            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
             return false;
         }
         return true;
@@ -114,9 +112,9 @@ public class EmailHelper {
     public boolean sendEmail(SendEmailUser sendEmailUser, MimeMessage mimeMessage) {
         try {
             configurationJavaMailSenderImpl(sendEmailUser).send(mimeMessage);
-            LOG.info(SUCCESS_MESSAGE);
+            LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(FAIL_MESSAGE + e.getMessage());
+            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
             return false;
         }
         return true;
@@ -132,9 +130,9 @@ public class EmailHelper {
     public boolean sendEmail(SendEmailUser sendEmailUser, MimeMessage... mimeMessages) {
         try {
             configurationJavaMailSenderImpl(sendEmailUser).send(mimeMessages);
-            LOG.info(SUCCESS_MESSAGE);
+            LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(FAIL_MESSAGE + e.getMessage());
+            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
             return false;
         }
         return true;
@@ -150,9 +148,9 @@ public class EmailHelper {
     public boolean sendEmail(SendEmailUser sendEmailUser, MimeMessagePreparator mimeMessagePreparator) {
         try {
             configurationJavaMailSenderImpl(sendEmailUser).send(mimeMessagePreparator);
-            LOG.info(SUCCESS_MESSAGE);
+            LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(FAIL_MESSAGE + e.getMessage());
+            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
             return false;
         }
         return true;
@@ -168,9 +166,9 @@ public class EmailHelper {
     public boolean sendEmail(SendEmailUser sendEmailUser, MimeMessagePreparator... mimeMessagePreparators) {
         try {
             configurationJavaMailSenderImpl(sendEmailUser).send(mimeMessagePreparators);
-            LOG.info(SUCCESS_MESSAGE);
+            LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(FAIL_MESSAGE + e.getMessage());
+            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
             return false;
         }
         return true;

@@ -35,6 +35,6 @@ public class SendEmailController {
      */
     @PostMapping("/simple")
     public boolean sendMessage(@RequestBody SendEmailContent sendEmailContent) {
-        return sendEmailService.sendSimpleEmail(sendEmailContent);
+        return sendEmailService.sendMimeMessageEmail(sendEmailContent);
     }
 }

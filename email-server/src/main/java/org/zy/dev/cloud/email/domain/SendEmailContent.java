@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * fileName: SendEmailTo
@@ -54,4 +55,24 @@ public class SendEmailContent {
      * 邮件内容
      */
     private String text;
+    
+    /**
+     * 是否使用 HTML 模板
+     */
+    private Boolean templateFlag = Boolean.FALSE;
+    
+    /**
+     * HTML 模板标识 code
+     */
+    private String templateCode;
+    
+    /**
+     * 模板内容
+     */
+    private HashMap<String, String> templateText = new HashMap<>();
+    
+    /**
+     * 附件
+     */
+    private String[] attachmentPath;
 }

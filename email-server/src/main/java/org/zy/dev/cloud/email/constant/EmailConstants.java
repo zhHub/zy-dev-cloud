@@ -10,6 +10,15 @@ package org.zy.dev.cloud.email.constant;
  */
 public interface EmailConstants {
     /**
+     * 邮件发送失败
+     */
+    String FAIL_MESSAGE = "邮件发送失败, 失败原因：";
+    /**
+     * 邮件发送成功
+     */
+    String SUCCESS_MESSAGE = "邮件发送成功";
+    
+    /**
      * 163 邮箱配置
      */
     interface Email163 {
