@@ -14,14 +14,8 @@ spring:
   cloud:
     gateway:
       discovery:
-      routes:
-        - id: consumer-server
-          uri: lb://CONSUMER-SERVER
-          predicates:
-            # 匹配路径转发
-            - Path=/consumer-server/**
-          filters:
-            - StripPrefix=1
+        locator:
+          enabled: true
     inetutils:
       preferred-networks: 192.168.1.104
       ignored-interfaces:
@@ -29,3 +23,7 @@ spring:
         - vEthernet (Default Switch)
         - vEthernet (nat)
 
+logging:
+  level:
+    # 设置 gateway 日志级别
+    org.springframework.cloud.gateway: debug

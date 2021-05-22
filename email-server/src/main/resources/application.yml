@@ -1,0 +1,33 @@
+server:
+  port: 10180
+management:
+  server:
+    port: 10181
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  health:
+    mail:
+      enabled: false
+spring:
+  application:
+    name: EMAIL-S
+  cloud:
+    inetutils:
+      preferred-networks: 192.168.1.104
+      ignored-interfaces:
+        - lo
+        - vEthernet (Default Switch)
+        - vEthernet (nat)
+  mail:
+    # smtp服务主机
+    host: smtp.163.com
+    username: xxx@163.com
+    password: xxx
+    # SMTP 服务端口
+    port: 465
+    # 服务协议
+    protocol: smtps
+    # 默认编码
+    default-encoding: UTF-8

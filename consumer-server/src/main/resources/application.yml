@@ -9,7 +9,7 @@ management:
         include: '*'
 spring:
   application:
-    name: consumer-server
+    name: CONS
   cloud:
     inetutils:
       preferred-networks: 192.168.1.104
